@@ -4,3 +4,9 @@
 [submodule "astra-sim/network/analytical_astra"]
 	path = astra-sim/network/analytical_astra
 	url = https://github.com/astra-sim/analytical_astra.git
+[submodule "astra-sim/network/gem5_astra"]
+	path = astra-sim/network/gem5_astra
+	url = https://github.com/georgia-tech-synergy-lab/gem5_astra.git
+[submodule "astra-sim/compute/SCALE-Sim"]
+	path = astra-sim/compute/SCALE-Sim
+	url = https://github.com/ARM-software/SCALE-Sim.git
