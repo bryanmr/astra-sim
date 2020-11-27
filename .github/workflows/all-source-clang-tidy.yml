@@ -24,11 +24,11 @@ jobs:
 
     - name: Check Output
       run: |
-        if [ "$(wc -l artifacts/clang-tidy-output-cc.txt)" -gt 0 ]
+        if [ "$(wc -l artifacts/clang-tidy-output-cc.txt | awk '{print $1}')" -gt 0 ]
         then
           echo "We have clang-tidy messages to look at."
           exit 1
-        elif [ "$(wc -l artifacts/clang-tidy-output-hh.txt)" -gt 0 ]
+        elif [ "$(wc -l artifacts/clang-tidy-output-hh.txt | awk '{print $1}')" -gt 0 ]
         then
           echo "Header files need help! We have clang-tidy messages to look at"
           exit 1
