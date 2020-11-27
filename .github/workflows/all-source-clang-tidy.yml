@@ -13,7 +13,7 @@ jobs:
     - name: Test Build and run clang-tidy
       run: |
         mkdir -p artifacts/
-        cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON . > 2>&1 artifacts/cmake_output.txt
+        cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON . > artifacts/cmake_output.txt 2>&1
         find astra-sim/ -name '*.cc' -exec clang-tidy {} \; > artifacts/clang-tidy-output-cc.txt
         find astra-sim/ -name '*.hh' -exec clang-tidy {} \; > artifacts/clang-tidy-output-hh.txt
 
