@@ -21,3 +21,15 @@ jobs:
       with:
         name: clang-tidy-All-Source
         path: artifacts
+
+    - name: Check Output
+      run: |
+        if [ "$(wc -l artifacts/clang-tidy-output-cc.txt)" -gt 0 ]
+        then
+          echo "We have clang-tidy messages to look at."
+          exit 1
+        elif [ "$(wc -l artifacts/clang-tidy-output-hh.txt)" -gt 0 ]
+        then
+          echo "Header files need help! We have clang-tidy messages to look at"
+          exit 1
+        fi
